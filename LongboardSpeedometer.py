@@ -50,7 +50,7 @@ def stop_session():
     db.UpdateSession(laatstRegel[0][0],datetime.now(),totalDistance,max_speed,average_speed,1,0) #laatst één wil zeggen; sessie gestart, in de code van de hall sensor kunnen er nu deelsessies gemaakt worden
     return render_template('gestopte_sessie_pagina.html')
 
-    # gfdgg
+    # gfdg
 
 
 
