@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+    <link href="https://fonts.googleapis.com/css?family=Rajdhani" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('sessions') }}">Sessions</a></li>
+                <li><a href="{{ url_for('add_session') }}">Add session</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block body %}
+        {% endblock %}
+    </main>
+</body>
+</html>

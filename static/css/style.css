@@ -1,0 +1,103 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    background-image: url("/static/images/844930-longboard-wallpaper.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+nav{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 22px;
+
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+nav li {
+    display: inline-block;
+    margin-right: 4% ;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+#big-title{
+    text-align: center;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    font-size: 60px;
+    color: white;
+    font-weight: 800;
+
+}
+header{
+    width: auto;
+    height: 100px;
+}
+
+main{
+    /*max-width: 860px;*/
+    margin: 0 auto;
+    height: 600px;
+    /*border: 1px solid red;*/
+    /*background-color: white;*/
+    /*opacity: 0.3;*/
+    /*filter: alpha(opacity=60);*/
+}
+
+#datadisplay{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    /*border: 1px solid red;*/
+}
+
+.item{
+    margin: 12px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+}
+
+.titel{
+    font-size: 20px;
+    margin-top: 2px;
+    margin-left: 5px;
+}
+
+.groot{
+    margin-left: 5px;
+    font-size: 70px;
+}
+
+.item-groot{
+    margin: 12px;
+    width: 250px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% import "macros/macros.html" as macro %}
+
+{% block title %}
+    index
+{% endblock %}
+
+{% block body %}
+    <table style="width:100%">
+        <tr>
+            <th>id_deelsessie</th>
+            <th>Time</th>
+            <th>Distance</th>
+            <th>Speed</th>
+            <th>id_sessie</th>
+  </tr>
+        {% for deelsessie in deelsessies %}
+            {{ macro.build_row(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4]) }}
+        {% endfor %}
+</table>
+{% endblock %}
