@@ -1,9 +1,53 @@
 {% extends 'base.html' %}
+{% import "macros/macros.html" as macro %}
 
 {% block title %}
     index
 {% endblock %}
 
 {% block body %}
-    <a href="{{ url_for('stop_session') }}">Stop sessie</a>
+    <div class="contrast-achtergrond">
+    <h2>CURRENT SESSION</h2>
+    <h3>Real time (refresh!)</h3>
+    <div id="datadisplay">
+        <div class="item-links-add_sesh">
+            <p class="titel-add">TIME</p>
+            <span class="groot-add">{{ time }}</span>
+            <span></span>
+        </div>
+        <div class="item-add_sesh">
+            <p class="titel-add">DISTANCE</p>
+            <span class="groot-add">{{ distance }}</span>
+            <span>km</span>
+        </div>
+        <div class="item-add_sesh">
+            <p class="titel-add">MAX SPEED</p>
+            <span class="groot-add">{{ max_speed }}</span>
+            <span>km/h</span>
+        </div>
+        <div class="item-right-add_sesh">
+            <p class="titel-add">AVERAGE SPEED</p>
+            <span class="groot-add">{{ avg }}</span>
+            <span>km/h</span>
+        </div>
+    </div>
+    <a href="{{ url_for('stop_session') }}">
+            <div class="stop-knop">
+                <img src="/static/images/cross-sign.png" alt="cross sign">
+                <span class="stop-tekst">STOP SESSION</span>
+            </div>
+        </a>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Time</th>
+            <th>Distance</th>
+            <th>Speed</th>
+            <th>id</th>
+        </tr>
+        {% for sessie in sessions %}
+            {{ macro.build_deelsessie_row(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4]) }}
+        {% endfor %}
+</table>
+    </div>
 {% endblock %}

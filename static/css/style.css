@@ -54,7 +54,6 @@ main{
     /*max-width: 860px;*/
     margin: 0 auto;
     height: 600px;
-    /*border: 1px solid red;*/
     /*background-color: white;*/
     /*opacity: 0.3;*/
     /*filter: alpha(opacity=60);*/
@@ -66,7 +65,6 @@ main{
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    /*border: 1px solid red;*/
 }
 
 .item{
@@ -80,15 +78,60 @@ main{
     padding: 10px;
 }
 
+.item-add_sesh{
+    margin: 12px;
+    width: 197px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+}
+
+.item-links-add_sesh{
+    margin: 12px;
+    margin-left: 0;
+    width: 197px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+}
+
+.item-right-add_sesh{
+    margin: 12px;
+    margin-right: 0;
+    width: 197px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+}
+
 .titel{
     font-size: 20px;
     margin-top: 2px;
     margin-left: 5px;
 }
+.titel-add{
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
 
 .groot{
     margin-left: 5px;
     font-size: 70px;
+}
+.groot-add{
+    margin: 0;
+    padding: 0;
+    font-size: 50px;
 }
 
 .item-groot{
@@ -101,3 +144,78 @@ main{
     text-align: left;
     padding: 10px;
 }
+
+.table{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    filter: alpha(opacity=30);
+    color: rgba(255, 255, 255, 0.9);
+    border-radius: 3px;
+    padding: 10px;
+    text-align: center;
+    margin-top: 14px;
+}
+
+.stop-knop{
+    margin: 0;
+    margin-top: 14px;
+    padding: 10px;
+    width: 860px;
+    height: 65px;
+    background-color: rgba(255, 0, 0, 0.2);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+}
+
+.stop-tekst{
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+    font-size: 35px;
+}
+
+img{
+    margin-top:7px;
+    margin-left:3px;
+    padding: auto;
+    height: 28px;
+    width: 28px;
+}
+
+h3{
+    margin: 0;
+    padding: 0;
+    margin-left: 2px;
+    margin-top: 21px;
+}
+
+h2{
+    margin: 0;
+    padding: 0;
+    margin-left: 1px;
+}
+
+.contrast-achtergrond{
+    /*background-color: rgba(0, 0, 0, 0.1);*/
+    /*filter: alpha(opacity=60);*/
+    /*border-radius: 10px;*/
+}
+
+.white{
+    color: rgba(255, 255, 255, 0.9);
+    filter: alpha(opacity=60);
+}
+
+.item-sessions{
+    margin: 5px;
+    width: 420px;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 5px;
+    text-align: left;
+    padding: 10px;
+}
+
+

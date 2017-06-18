@@ -45,6 +45,28 @@ class DbClass:
         self.__cursor.close()
         return result
 
+    def getLaatsteRegelDeelSessies(self):
+        self.__connection = connector.connect(**self.__dsn)
+        self.__cursor = self.__connection.cursor()
+        # Query zonder parameters
+        sqlQuery = "SELECT * FROM tbl_deelsessie ORDER BY id_sessie DESC LIMIT 1"
+
+        self.__cursor.execute(sqlQuery)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def getLaatste5RegelsDeelsessies(self, id):
+        self.__connection = connector.connect(**self.__dsn)
+        self.__cursor = self.__connection.cursor()
+        # Query zonder parameters
+        sqlQuery = "SELECT * FROM tbl_deelsessie WHERE id_sessie = '"+str(id)+"' ORDER BY id_sessie DESC LIMIT 6 "
+
+        self.__cursor.execute(sqlQuery)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
     def getBepaaldeDeelsessies(self, id):
         self.__connection = connector.connect(**self.__dsn)
         self.__cursor = self.__connection.cursor()

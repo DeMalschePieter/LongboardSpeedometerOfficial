@@ -1,9 +1,33 @@
-{% macro build_row(id,time,distance,speed,id_history) %}
+{% macro build_row(id,start,stop,distance,max,average,id_rider) %}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{start}}</td>
+        <td>{{stop}}</td>
+        <td>{{(stop - start)}}</td>
+        <td>{{distance}}</td>
+        <td>{{max}}</td>
+        <td>{{average}}</td>
+        <td>{{id_rider}}</td>
+    </tr>
+{% endmacro %}
+
+{% macro build_deelsessie_row(id,time,distance,speed,id_sessie) %}
     <tr>
         <td>{{id}}</td>
         <td>{{time}}</td>
         <td>{{distance}}</td>
-        <td>{{speed}}</td>
-        <td>{{id_history}}</td>
+        <td>{{(speed)}}</td>
+        <td>{{id_sessie}}</td>
     </tr>
 {% endmacro %}
+
+{% macro build_session(id,time,distance,speed,id_sessie) %}
+    <tr>
+        <td>{{id}}</td>
+        <td>{{time}}</td>
+        <td>{{distance}}</td>
+        <td>{{(speed)}}</td>
+        <td>{{id_sessie}}</td>
+    </tr>
+{% endmacro %}
+

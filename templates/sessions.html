@@ -6,16 +6,34 @@
 {% endblock %}
 
 {% block body %}
-    <table style="width:100%">
+    <h2>SESSIONS</h2>
+    <div id="datadisplay">
+{#        {% for sessie in sessions %}#}
+{#            {{ macro.build_session(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4],sessie[5],sessie[6]) }}#}
+{#        {% endfor %}#}
+
+        <div class="item-sessions">
+        </div>
+        <div class="item-sessions">
+        </div>
+        <div class="item-sessions">
+        </div>
+        <div class="item-sessions">
+        </div>
+    </div>
+    <table class="table">
         <tr>
-            <th>id_deelsessie</th>
+            <th>ID</th>
+            <th>Start</th>
+            <th>End</th>
             <th>Time</th>
             <th>Distance</th>
-            <th>Speed</th>
-            <th>id_sessie</th>
-  </tr>
-        {% for deelsessie in deelsessies %}
-            {{ macro.build_row(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4]) }}
+            <th>Max speed</th>
+            <th>Average speed</th>
+            <th>ID_rider</th>
+        </tr>
+        {% for sessie in sessions %}
+            {{ macro.build_row(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4],sessie[5],sessie[6]) }}
         {% endfor %}
 </table>
 {% endblock %}
