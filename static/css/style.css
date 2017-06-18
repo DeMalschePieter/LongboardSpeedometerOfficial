@@ -7,7 +7,7 @@ body {
     background-image: url("/static/images/844930-longboard-wallpaper.jpg");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     max-width: 860px;
     margin: 0 auto;
 }
@@ -68,14 +68,40 @@ main{
 }
 
 .item{
-    margin: 12px;
-    width: 150px;
+    margin: 14px;
+    width: 170px;
     height: 150px;
     background-color: rgba(255, 255, 255, 0.5);
     filter: alpha(opacity=60);
     border-radius: 10px;
     text-align: left;
     padding: 10px;
+}
+
+.item-links{
+    margin: 14px;
+    margin-left: 0;
+    width: 175px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+
+}
+
+.item-rechts{
+    margin: 14px;
+    margin-right: 0;
+    width: 237px;
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.5);
+    filter: alpha(opacity=60);
+    border-radius: 10px;
+    text-align: left;
+    padding: 10px;
+
 }
 
 .item-add_sesh{
@@ -113,10 +139,36 @@ main{
     padding: 10px;
 }
 
-.titel{
+.titel {
     font-size: 20px;
     margin-top: 2px;
     margin-left: 5px;
+}
+
+
+.titel-session{
+    font-size: 30px;
+    margin-bottom: 100px;
+    border: 1px solid red;
+}
+
+
+
+.titel-welcome{
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    margin-left: 5px;
+    margin-top: 2px;
+    padding: 0;
+}
+
+.welcome-tekst{
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;
+    margin-top: 15px;
+
 }
 .titel-add{
     font-size: 15px;
@@ -125,7 +177,16 @@ main{
 }
 
 .groot{
+    margin: 0;
+    padding: 0;
     margin-left: 5px;
+    font-size: 70px;
+}
+
+.groot-sessies{
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
     font-size: 70px;
 }
 .groot-add{
@@ -136,17 +197,18 @@ main{
 
 .item-groot{
     margin: 12px;
-    width: 250px;
-    height: 300px;
-    background-color: rgba(255, 255, 255, 0.5);
+    width: auto;
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.8);
     filter: alpha(opacity=60);
     border-radius: 10px;
     text-align: left;
     padding: 10px;
+    color: black;
 }
 
 .table{
-    width: 100%;
+    width: 98.5%;
     background-color: rgba(0, 0, 0, 0.6);
     filter: alpha(opacity=30);
     color: rgba(255, 255, 255, 0.9);
@@ -155,6 +217,12 @@ main{
     text-align: center;
     margin-top: 14px;
 }
+
+.table-sessions{
+    width: 100%;
+    margin-top: 8px;
+}
+
 
 .stop-knop{
     margin: 0;
@@ -208,8 +276,10 @@ h2{
 }
 
 .item-sessions{
-    margin: 5px;
-    width: 420px;
+    margin: 0;
+    margin-top: 14px;
+    margin-right: 14px;
+    width: 416px;
     height: 200px;
     background-color: rgba(255, 255, 255, 0.5);
     filter: alpha(opacity=60);
@@ -218,4 +288,21 @@ h2{
     padding: 10px;
 }
 
+.datum-sessies{
+    color: darkorange;
+    margin: 0;
+    margin-right: 9px;
+    padding: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.tijd{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#index-titel{
+    margin-left: 12px;
+}
 

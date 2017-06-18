@@ -12,14 +12,10 @@
 {#            {{ macro.build_session(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4],sessie[5],sessie[6]) }}#}
 {#        {% endfor %}#}
 
-        <div class="item-sessions">
-        </div>
-        <div class="item-sessions">
-        </div>
-        <div class="item-sessions">
-        </div>
-        <div class="item-sessions">
-        </div>
+        {% for sessie in laatste4 %}
+                    {{ macro.build_laatste4(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4],sessie[5],sessie[6],time) }}
+        {% endfor %}
+
     </div>
     <table class="table">
         <tr>
@@ -32,8 +28,11 @@
             <th>Average speed</th>
             <th>ID_rider</th>
         </tr>
+        <tbody>
         {% for sessie in sessions %}
-            {{ macro.build_row(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4],sessie[5],sessie[6]) }}
+
+            {{ macro.build_row(sessie[0],sessie[1], sessie[2],sessie[3],sessie[4],sessie[5],sessie[6],time) }}
         {% endfor %}
+        </tbody>
 </table>
 {% endblock %}

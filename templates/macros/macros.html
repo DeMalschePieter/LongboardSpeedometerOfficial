@@ -1,12 +1,17 @@
-{% macro build_row(id,start,stop,distance,max,average,id_rider) %}
+{% macro build_row(id,start,stop,distance,max,average,id_rider,time) %}
     <tr>
         <td>{{id}}</td>
         <td>{{start}}</td>
         <td>{{stop}}</td>
-        <td>{{(stop - start)}}</td>
-        <td>{{distance}}</td>
-        <td>{{max}}</td>
-        <td>{{average}}</td>
+        {% if stop == none %}
+            <td>{{time - start}}</td>
+        {% endif %}
+        {% if stop != none %}
+            <td>{{stop - start}}</td>
+        {% endif %}
+        <td>{{distance|round(2)}}</td>
+        <td>{{max|round(1)}}</td>
+        <td>{{average|round(1)}}</td>
         <td>{{id_rider}}</td>
     </tr>
 {% endmacro %}
@@ -31,3 +36,30 @@
     </tr>
 {% endmacro %}
 
+{% macro build_laatste4(id,start,stop,distance,max,average,id_rider,time) %}
+    <div class="item-sessions">
+            <span class="datum-sessies">{{ (start|string)[0:10] }}</span>
+            {% if stop == none %}
+                <span class="tijd">{{time - start}}</span>
+            {% endif %}
+            {% if stop != none %}
+                <span class="tijd">{{stop - start}}</span>
+            {% endif %}
+
+
+            <table class="table-sessions">
+                <tr>
+                    <td>Distance</td>
+                    <td>Max speed</td>
+                    <td>Average speed</td>
+                </tr>
+
+
+                <tr>
+                    <td><span class="groot-sessies">{{ distance|round(2) }} </span> <span>km</span></td>
+                    <td><span class="groot">{{ max|round(1) }}</span> <span>km/h</span></td>
+                    <td><span class="groot">{{ average|round(1) }}</span> <span>km/h</span></td>
+                </tr>
+            </table>
+        </div>
+{% endmacro %}

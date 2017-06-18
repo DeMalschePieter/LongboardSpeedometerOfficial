@@ -1,4 +1,6 @@
 from flask import Flask, render_template
+from numpy.distutils.fcompiler import none
+
 from DbClass import DbClass
 from datetime import datetime
 import os
@@ -20,24 +22,33 @@ def index():
     sessies = db.getSessies()
     for sessie in sessies:
         teller += 1
-        time = sessie[2]-sessie[1]
+        if sessie[2] is None:
+            time = datetime.now() - sessie[1]
+        else:
+            time = sessie[2]-sessie[1]
+
         total_time = total_time + time
         total_distance += sessie[3]
         average_speed += sessie[5]
         if sessie[4] > max_speed:
             max_speed = sessie[4]
 
-    total_distance = total_distance / 1000
     average_speed = average_speed / teller
+    total_time = str(total_time)
+    total_time = total_time[0:7]
 
 
-    return render_template('index.html', total_time = total_time, total_distance = round(total_distance,2), max_speed = round(max_speed,1), average_speed = round(average_speed,1))
+    return render_template('index.html', total_time = total_time, total_distance = total_distance, max_speed = max_speed, average_speed = average_speed)
 
 @app.route('/sessions')
 def sessions():
     db = DbClass()
     sessions = db.getSessies()
-    return render_template('sessions.html',sessions= sessions)
+
+    db = DbClass()
+    laatste4 = db.get4LaatsteRegelsSessies()
+    time = datetime.now()
+    return render_template('sessions.html',sessions= sessions, laatste4 = laatste4, time = time)
 
 @app.route('/add_session')
 def add_session():
@@ -50,9 +61,9 @@ def add_session():
     db = DbClass()
     laatsteRegel = db.getLaatsteRegelSessies()
 
-    if laatsteRegel[0][7]  == 0:
+    if laatsteRegel[0][7] == 0:
         db = DbClass()
-        db.setSessie(str(datetime.now()),"0000-00-00 00:00:00",0,0,0,1,1) #laatst één wil zeggen; sessie gestart, in de code van de hall sensor kunnen er nu deelsessies gemaakt worden
+        db.setSessie(str(datetime.now()),str(datetime.now()-datetime.now()),0,0,0,1,1) #laatst één wil zeggen; sessie gestart, in de code van de hall sensor kunnen er nu deelsessies gemaakt worden
 
         return render_template('add_session.html')
     else:
@@ -99,6 +110,8 @@ def stop_session():
         if float(deelsessie[3]) > max_speed:
             max_speed = float(deelsessie[3])
     average_speed = (totalDistance * 3.6) / teller
+
+    totalDistance = totalDistance / 1000
     print(totalDistance)
     print(max_speed)
     print(average_speed)
@@ -112,5 +125,5 @@ def stop_session():
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 8080))
-    host = "169.254.10.1"
+    host = "0.0.0.0"
     app.run(host=host, port=port, debug=True)

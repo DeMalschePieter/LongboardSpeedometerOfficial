@@ -6,36 +6,40 @@
 {% endblock %}
 
 {% block body %}
+    <h2 id="index-titel">DASHBOARD</h2>
     <div id="datadisplay">
-        <div class="item">
+        <div class="item-links">
             <p class="titel">Total distance</p>
-            <span class="groot">{{ total_distance }}</span>
+            <span class="groot">{{ total_distance|round(2) }}</span>
             <span>km</span>
         </div>
         <div class="item">
             <p class="titel">Max speed</p>
-            <span class="groot">{{ max_speed }}</span>
+            <span class="groot">{{ max_speed|round(1) }}</span>
             <span>km/h</span>
         </div>
         <div class="item">
             <p class="titel">Avg. speed</p>
-            <span class="groot">{{ average_speed }}</span>
+            <span class="groot">{{ average_speed|round(1) }}</span>
             <span>km/h</span>
         </div>
-        <div class="item">
+        <div class="item-rechts">
             <p class="titel">Total time</p>
             <span class="groot">{{ total_time }}</span>
-            <span>km</span>
         </div>
         <div class="item-groot">
-            <p class="titel">Last session</p>
+            <p class="titel-welcome">Welcome!</p>
+            <p class="welcome-tekst">This is the longboard speedometer website, powered by the raspberry pi 3 under the longboard.
+                On this website you start a new sessions, simply by clicking the 'add session' menu button.
+                A new seesion will start and by refreshing the page you will see real time values like elapsed time, distance, maxium speed.
+                Closing the session is even more easy, just press the 'stop session' button and your session will be uploaded t0 the sessions page.</p>
 {#            <div id="myPieChart"/>#}
         </div>
-        <div class="item-groot">
-            <p class="titel">Total distance</p>
-            <span class="groot">100</span>
-            <span>km</span>
-        </div>
+{#        <div class="item-groot">#}
+{#            <p class="titel">Total distance</p>#}
+{#            <span class="groot">100</span>#}
+{#            <span>km</span>#}
+{#        </div>#}
 
     </div>
 

@@ -6,8 +6,8 @@ class DbClass:
 
         self.__dsn = {
             "host": "localhost",
-            "user": "root",
-            "passwd": "Spongebob123",
+            "user": "pierre",
+            "passwd": "geheim",
             "db": "TLSDatabase"
         }
 
@@ -39,6 +39,17 @@ class DbClass:
         self.__cursor = self.__connection.cursor()
         # Query zonder parameters
         sqlQuery = "SELECT * FROM tbl_sessies ORDER BY id_sessie DESC LIMIT 1"
+
+        self.__cursor.execute(sqlQuery)
+        result = self.__cursor.fetchall()
+        self.__cursor.close()
+        return result
+
+    def get4LaatsteRegelsSessies(self):
+        self.__connection = connector.connect(**self.__dsn)
+        self.__cursor = self.__connection.cursor()
+        # Query zonder parameters
+        sqlQuery = "SELECT * FROM tbl_sessies ORDER BY id_sessie DESC LIMIT 4"
 
         self.__cursor.execute(sqlQuery)
         result = self.__cursor.fetchall()

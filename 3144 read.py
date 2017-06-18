@@ -1,4 +1,6 @@
 import time
+
+from datetime import datetime
 from RPi import GPIO
 from RPi._GPIO import BCM
 import lcd
@@ -45,11 +47,9 @@ try:
 
     while True:
         functie = meterPerSecondeKenneth()
-        tekst = round(functie[1],2)
-        lcd.lcd_byte(lcd.LCD_LINE_1, lcd.LCD_CMD)
-        lcd.lcd_byte(0x01, False)
-        time.sleep(0.03)
-        lcd.lcd_string(str(tekst),2)
+
+
+
 
         db = DbClass()
         laatstRegel = db.getLaatsteRegelSessies()
@@ -57,11 +57,31 @@ try:
         if laatstRegel[7] == 1:
             db.setDeelsessie("00:00:01",functie[0],functie[1],laatstRegel[0])
 
+        tekst = round(functie[1], 2)
+
+        lcd.lcd_byte(0x01, False)
+        time.sleep(0.03)
+
+        if laatstRegel[7] == 1:
+            distance = 0
+
+            db = DbClass()
+            deelsessies = db.getBepaaldeDeelsessies(laatstRegel[0])
+            for sessie in deelsessies:
+                distance += sessie[2]
+
+            distance = distance / 1000
+
+
+            lcd.lcd_byte(lcd.LCD_LINE_2, lcd.LCD_CMD)
+            lcd.lcd_string(str(round(distance, 3)) + " km", 1)
+        lcd.lcd_byte(lcd.LCD_LINE_1, lcd.LCD_CMD)
+        lcd.lcd_string(str(tekst) + " km/u", 1)
 
 
 
-        # lcd.lcd_byte(lcd.LCD_LINE_2, lcd.LCD_CMD)
-        # lcd.lcd_string(lcd.get_ip_son(), 2)
+
+
 
         # print("--------------------------------------------")
 
