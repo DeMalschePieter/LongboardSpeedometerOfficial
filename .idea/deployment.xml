@@ -5,7 +5,7 @@
       <paths name="Pi">
         <serverdata>
           <mappings>
-            <mapping deploy="/pycharm" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/project1" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -32,42 +32,9 @@
             <p class="welcome-tekst">This is the longboard speedometer website, powered by the raspberry pi 3 under the longboard.
                 On this website you start a new sessions, simply by clicking the 'add session' menu button.
                 A new seesion will start and by refreshing the page you will see real time values like elapsed time, distance, maxium speed.
-                Closing the session is even more easy, just press the 'stop session' button and your session will be uploaded t0 the sessions page.</p>
-{#            <div id="myPieChart"/>#}
+                Closing the session is even more easy, just press the 'stop session' button and your session will be uploaded to the sessions page.</p>
         </div>
-{#        <div class="item-groot">#}
-{#            <p class="titel">Total distance</p>#}
-{#            <span class="groot">100</span>#}
-{#            <span>km</span>#}
-{#        </div>#}
 
     </div>
 
-    <script type="text/javascript">
-    google.charts.load('current', {packages: ['corechart']});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      // Define the chart to be drawn.
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Element');
-      data.addColumn('number', 'Percentage');
-      data.addRows([
-        ['Nitrogen', 0.78],
-        ['Oxygen', 0.21],
-        ['Other', 0.01]
-      ]);
-
-        var options = {
-            'title':'U MOMA',
-            'width':'150',
-            'height':'150',
-            'padding':'0',
-            'margin':'0',
-        };
-
-      // Instantiate and draw the chart.
-      var chart = new google.visualization.PieChart(document.getElementById('myPieChart'));
-      chart.draw(data, options);
-    }
-    </script>
 {% endblock %}
